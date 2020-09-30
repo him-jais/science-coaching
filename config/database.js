@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 const connectDB=()=>{
-mongoose.connect('mongodb://localhost:27017/july-science-project', 
+mongoose.connect( process.env.MONGODB_URI || 'mongodb://localhost:27017/july-science-project', 
 { useNewUrlParser: true,
-    useUnifiedTopology: true})
+    useUnifiedTopology: true}) //step 2
 .then(()=>{
     console.log('connected to db')
 })
